@@ -17,27 +17,35 @@ void vector<T>::pop_back() {
 
 template <typename T>
 void vector<T>::insert(T data, int pos) {
-	if (pos > _size - 1 || pos < 0) return;
-	if (_size + 5 == _capacity) {
-		expand();
+	if (inBounds(pos)) {
+		if (_size + 5 == _capacity)
+			expand();
+		for (int i = _size - 1; i > pos; i--) 
+			array[i + 1] = array[i];
+		array[pos] = data;
+		_size++;
 	}
-	for (int i = _size - 1; i > pos; i--) 
-		array[i + 1] = array[i];
-	array[pos] = data;
-	_size++;
 }
 
 template <typename T>
 void vector<T>::remove(int pos) {
-	if (pos > _size - 1|| pos < 0) return;
-	for (int i = pos; i < _size + 1; i++) 
-		array[i] = array[i + 1];
-	_size--;
+	if (inBounds(pos)) {
+		for (int i = pos; i < _size + 1; i++) 
+			array[i] = array[i + 1];
+		_size--;
+	}
 }
 
 template <typename T>
 const T& vector<T>::operator[](int i) {
-	if (!(i > _size - 1 || i < 0)) return array[i];
+	if (inBounds(i) && i != _size) 
+		return array[i];
+	// should throw some error if out of bounds
+}
+
+template <typename T>
+bool vector<T>::inBounds(int index) {
+	return index <= _size && index >= 0;
 }
 
 template <typename T>
@@ -47,6 +55,8 @@ int vector<T>::size() {
 
 template <typename T>
 void vector<T>::clear() {
+	for (int i = 0; i < _size; i++) // calls destructor of every object
+		array[i].~T();
 	_size = 0;
 }
 

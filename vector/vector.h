@@ -15,6 +15,7 @@ private:
 	int _capacity;
 	T *array;
 	void expand();
+	bool inBounds(int index); // checks to see if a given index is in bounds. latest addition
 public:
 	vector();
 	~vector();

@@ -14,5 +14,7 @@ int main() {
 		morenumbers.push_back(i); 
 	//std::cout << std::endl << "morenumbers.size() = " << morenumbers.size() << std::endl;
 	morenumbers.pop_back();
-	cout << morenumbers[3] << endl;
+	cout << morenumbers[0] << endl;
+	morenumbers.clear();
+	//cout << morenumbers[0] << endl;
 }
