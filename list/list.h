@@ -39,6 +39,7 @@ public:
 	void insert(T data, int index);
 	void remove(int index);
 	int size();
+	void clear();
 	void print();
 };
 

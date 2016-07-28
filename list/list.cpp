@@ -52,6 +52,12 @@ void list<T>::remove(int index) {
 		}
 	}
 }
+	
+template <typename T>
+void list<T>::clear() {
+	while (_size > 0)
+		remove(0);
+}
 
 template <typename T>
 int list<T>::size() {
@@ -67,6 +73,5 @@ void list<T>::print() {
 
 template <typename T>
 list<T>::~list() {
-	while (_size > 0)
-		remove(0);
+	clear();
 }

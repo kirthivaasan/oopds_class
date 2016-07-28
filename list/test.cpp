@@ -14,5 +14,7 @@ int main() {
 	numbers.remove(0);
 	cout << endl;
 	numbers.print();
+	numbers.clear();
+	numbers.print();
 	cout << endl << "Size: " << numbers.size() << endl;
 }
