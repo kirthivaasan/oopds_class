@@ -25,8 +25,6 @@ public:
 #ifndef bst_h
 #define bst_h
 
-#include <iostream>
-
 namespace kirthi
 {
 	
@@ -52,8 +50,8 @@ public:
 	void clear();
 	void print();
 };
+} // namespace kirthi
 
 #include "bst.cpp" // to resolve template class. included inside kirthi namespace
 
-} // namespace kirthi
 #endif

@@ -1,3 +1,7 @@
+#include <iostream>
+
+namespace kirthi {
+	
 template <typename T>
 bst<T>::bst() : _size(0), root(nullptr) {
 
@@ -132,3 +136,5 @@ template <typename T>
 bst<T>::~bst() {
 	clear();
 }
+
+} // end kirthi namespace 
