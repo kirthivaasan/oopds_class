@@ -20,6 +20,8 @@ class graph {
 private:
 	std::map<T, std::set<T> > adj_vec;
 	int _size;
+	bool isConnectedHelper(T currentNode, const T &v, std::vector<T> &visited);
+	bool isInVector(const T &u, std::vector<T> &visited);
 public:
 	graph();
 	~graph();

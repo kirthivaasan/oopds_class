@@ -4,19 +4,30 @@ using namespace std;
 
 int main() {
 	kirthi::graph<string> test_graph;
-	test_graph.addNode("mau");
-	test_graph.addEdge("mau", "haf");
-	test_graph.addEdge("mingda", "mau");
-	test_graph.addEdge("mau", "kirthi");
-	test_graph.addEdge("kirthi", "mingda");
+	test_graph.addNode("a");
+	test_graph.addEdge("a", "b");
+	test_graph.addEdge("c", "a");
+	test_graph.addEdge("a", "d");
+	test_graph.addEdge("d", "c");
 	
 	test_graph.print();
 	
-	test_graph.removeEdge("mau", "kirthi");
-	cout << endl << "After removing edge mau -> kirthi" << endl << endl;
+	cout << endl << endl;
+	
+	if (test_graph.isConnected("a", "c")) {
+		cout << "a connected to c" << endl;
+	} else {
+		cout << "not connected" << endl;
+	}
+	/*
+	test_graph.removeEdge("a", "kirthi");
+	cout << endl << "After removing edge a -> kirthi" << endl << endl;
 	test_graph.print();
 	
-	test_graph.removeNode("mau");
-	cout << endl << "After removing node mau" << endl << endl;
+	test_graph.removeNode("a");
+	cout << endl << "After removing node a" << endl << endl;
 	test_graph.print();
+	*/
+	
+	
 }
